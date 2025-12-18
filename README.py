@@ -1,82 +1,53 @@
-# Health Sector Stock Portfolio Optimization using PAM Clustering
-**Research Portfolio | Undergraduate Thesis (Statistics)**
+# Health Sector Stock Portfolio Optimization  
+**PAM Clustering & Mean–Semivariance Approach**
 
 ---
 
-## 📌 Project Overview
-This repository contains a **full research pipeline script** developed as part of my undergraduate thesis in Statistics.  
-The project focuses on **stock portfolio formation in the Indonesian health sector** by integrating clustering techniques and downside-risk–based portfolio optimization.
+## 📌 Overview
+This repository presents a **research-based data analysis project** developed from my undergraduate thesis in Statistics.  
+The study focuses on **portfolio optimization of Indonesian health sector stocks** using clustering techniques and downside-risk–based portfolio construction.
 
-The analysis supports **data-driven investment decision-making** under asymmetric risk conditions by combining statistical learning methods and financial risk modeling.
+The project integrates **statistical analysis, financial modeling, and data-driven decision making**.
 
 ---
 
-## 🎯 Research Objectives
-The objectives of this research are to:
-- Cluster health sector stocks using **Partitioning Around Medoids (PAM) Clustering**
-- Reduce dimensionality and multicollinearity using **Principal Component Analysis (PCA)**
+## 🎯 Objectives
+- Cluster health sector stocks using **Partitioning Around Medoids (PAM)**
+- Reduce dimensionality using **Principal Component Analysis (PCA)**
 - Select representative stocks from each cluster
-- Construct an optimal portfolio using the **Mean–Semivariance approach**
-- Measure portfolio risk using **Value at Risk (VaR)** with Historical Simulation
+- Construct an optimal portfolio using the **Mean–Semivariance framework**
+- Measure downside risk using **Value at Risk (VaR)** (Historical Simulation)
 - Evaluate portfolio performance using the **Sharpe Ratio**
 
 ---
 
-## 🛠️ Methodology Summary
-
-### 1. Exploratory Data Analysis
-- Descriptive statistics (manual computation)
-- Outlier detection using **Mahalanobis Distance**
-
-### 2. Data Preprocessing
-- Standardization using **Maximum Absolute Scaling**
-- Assumption testing:
-  - Kaiser–Meyer–Olkin (KMO)
-  - Multicollinearity (Variance Inflation Factor)
-
-### 3. Dimensionality Reduction
-- **Principal Component Analysis (manual computation)**
-- Eigenvalue–eigenvector decomposition
-- Construction of principal component scores
-
-### 4. Clustering Analysis
-- Distance measurement using **Euclidean Distance**
-- Clustering using **Partitioning Around Medoids (PAM)**
-- Determination of optimal number of clusters using **Silhouette Index**
-
-### 5. Portfolio Construction
-- Log return calculation
-- Downside risk measurement using **Semivariance and Semicovariance**
-- Portfolio weight optimization using matrix inversion
-
-### 6. Risk and Performance Evaluation
-- **Value at Risk (VaR)** using Historical Simulation (1, 5, and 20 holding periods)
-- **Sharpe Ratio** using BI Rate as the risk-free rate
+## 🛠️ Methods
+- **Clustering:** PAM (Partitioning Around Medoids)  
+- **Dimension Reduction:** PCA (manual computation)  
+- **Return Calculation:** Log return  
+- **Risk Measure:** Semivariance & Semicovariance  
+- **Portfolio Optimization:** Matrix-based optimization  
+- **Risk Evaluation:** Value at Risk (Historical Simulation)  
+- **Performance Metric:** Sharpe Ratio (BI Rate as risk-free rate)  
 
 ---
 
-## 📐 Mathematical Formulation (Key Concepts)
+## 📐 Key Formulas
+- Log Return  
+  `R_t = ln(P_t / P_{t-1})`
 
-- **Log Return**  
-  \( R_t = \ln(P_t / P_{t-1}) \)
+- Mean–Semivariance Portfolio  
+  `μ_p = Σ w_i μ_i`  
+  `SV_p = wᵀ SV w`
 
-- **Semivariance**  
-  \( SV_i = E[\min(R_i - B, 0)^2] \)
+- Value at Risk (Historical Simulation)  
+  `VaR_α = Quantile(R_p, α)`
 
-- **Mean–Semivariance Portfolio**  
-  \( \mu_p = \sum w_i \mu_i \)  
-  \( SV_p = w^T SV w \)
-
-- **Value at Risk (Historical Simulation)**  
-  \( VaR_{\alpha} = Q_{\alpha}(R_p) \)
-
-- **Sharpe Ratio**  
-  \( SR = (E(R_p) - R_f) / \sigma_p \)
+- Sharpe Ratio  
+  `SR = (E(R_p) − R_f) / σ_p`
 
 ---
 
-## 📂 Script Description
-The complete analysis is implemented in a single script:
+## 📂 Main Script
+All analyses are implemented in a single R script:
 
-```text
-full_research_pipeline_health_sector.R
